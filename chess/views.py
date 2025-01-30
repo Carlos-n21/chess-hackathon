@@ -1,7 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def chessPage(request):
-    return HttpResponse("Test")
+    return render(request, 'chess.html')
 
 def loginPage(request):
-    return HttpResponse("Test 2")
+    return render(request, 'login.html')
