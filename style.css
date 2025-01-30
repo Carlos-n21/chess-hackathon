@@ -1,11 +1,13 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* navbar style */
@@ -14,12 +16,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 40px; /* Add padding to the left and right sides */
     background-color: #333;
     color: white;
-    position: fixed;
+    position: relative;
     top: 0;
     z-index: 1;
+    box-sizing: border-box;
 }
 
 /* navbar links style */
@@ -27,6 +30,25 @@ body {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* board style */
@@ -35,8 +57,7 @@ body {
     grid-template-columns: repeat(8, 80px);
     grid-template-rows: repeat(8, 80px);
     gap: 0;
-    margin-top: 380px; /* Adjust for navbar height + additional space */
-    margin-bottom: -5px; /* Adjust for footer height */
+    margin: 50px auto 10px auto; /* Center the chessboard and add space */
 }
 
 /* squares style */
@@ -66,6 +87,7 @@ body {
     position: relative;
     bottom: 0;
     margin-top: 40px; /* Adjust for half square height */
+    box-sizing: border-box;
 }
 
 /* footer links style */
@@ -73,4 +95,10 @@ body {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+}
+
+.footer img {
+    width: 24px; 
+    height: 24px;
+    border-radius: 50%;
 }
