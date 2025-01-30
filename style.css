@@ -52,6 +52,50 @@ body {
     transform-origin: bottom left;
 }
 
+/* rules container style */
+.rules-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px; /* Adjust for navbar height */
+    margin-bottom: 40px; /* Add space between the container and the footer */
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; /* Center all text */
+}
+
+.rules-container h1, .rules-container h2, .rules-container h3 {
+    margin: 10px 0;
+}
+
+.rules-container p {
+    margin: 10px 0;
+}
+
+.rules-container img {
+    margin: 10px 0;
+}
+
+.rules-image {
+    width: 100%;
+    max-width: 400px;
+}
+
+.rules-piece {
+    width: 200px;
+    height: 200px;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 /* leaderboard container style */
 .leaderboard-container {
     display: flex;
