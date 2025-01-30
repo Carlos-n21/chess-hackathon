@@ -46,6 +46,7 @@ body {
     transition: transform 0.25s ease-out;
 }
 
+/* navbar links hover effect */
 .navbar a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -57,13 +58,18 @@ body {
     grid-template-columns: repeat(8, 80px);
     grid-template-rows: repeat(8, 80px);
     gap: 0;
-    margin: 50px auto 10px auto; /* Center the chessboard and add space */
+    margin-top: 20px; /* Adjust for space between navbar and chessboard */
+    margin-bottom: 40px; /* Adjust for footer height */
 }
 
 /* squares style */
 .square {
     width: 80px;
     height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px; /* Adjust the size of the pieces */
 }
 
 /* squares colors */
@@ -86,7 +92,6 @@ body {
     color: white;
     position: relative;
     bottom: 0;
-    margin-top: 40px; /* Adjust for half square height */
     box-sizing: border-box;
 }
 
@@ -97,6 +102,7 @@ body {
     margin-left: 20px;
 }
 
+/* footer github icons style */
 .footer img {
     width: 24px; 
     height: 24px;
