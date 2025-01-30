@@ -1,3 +1,18 @@
+/* body style */
 body {
-    background-color: aquamarine;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* navbar style */
+.navbar {
+    background-color: #9ccdff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(7, 114, 255);
 }
