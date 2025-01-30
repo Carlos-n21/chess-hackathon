@@ -1,18 +1,104 @@
-/* body style */
 body {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* navbar style */
 .navbar {
-    background-color: #9ccdff;
-    padding: 1rem 2rem;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgb(7, 114, 255);
+    padding: 10px 40px; /* Add padding to the left and right sides */
+    background-color: #333;
+    color: white;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+/* navbar links style */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* board style */
+.chessBoard {
+    display: grid;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+    gap: 0;
+    margin: 50px auto 10px auto; /* Center the chessboard and add space */
+}
+
+/* squares style */
+.square {
+    width: 80px;
+    height: 80px;
+}
+
+/* squares colors */
+.white {
+    background-color: #f0d9b5;
+}
+
+.black {
+    background-color: #b58863;
+}
+
+/* footer style */
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    margin-top: 40px; /* Adjust for half square height */
+    box-sizing: border-box;
+}
+
+/* footer links style */
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.footer img {
+    width: 24px; 
+    height: 24px;
+    border-radius: 50%;
 }
