@@ -5,5 +5,3 @@ def chessPage(request):
 
 def loginPage(request):
     return render(request, 'login.html')
-
-class
