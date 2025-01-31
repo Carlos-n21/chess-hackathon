@@ -22,8 +22,8 @@ Live site: []()
     - [Typography](#typography)
     - [Imagery](#imagery)
 - [Website Features](#website-features)
-    - [Homepage](#homepage)
-    - [Footer](#footer)
+    - [Overall](#overall)
+    - [Specific](#specific-features)
 - [Responsive Design](#responsive-design)
 - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
@@ -54,13 +54,14 @@ The project goal.
 The site user.
 
 ### Users
+<details>
 Persona 1: The Enthusiastic Novice<br>
 Name: James Parker Age: 25 <br>Occupation: Software Developer <br>Interests: Video games, coding, strategy games <br>About: James has recently discovered his passion for chess and is eager to improve his skills. He enjoys playing chess with colleagues during lunch breaks and loves seeing his progress on the leaderboard. James often refers to the chess rules section to better understand advanced strategies and tactics. His goal is to eventually make it to the top 10 players on the site.
 
 Persona 2: The Competitive Challenger<br>Name: Maria Gonzalez <br>Age: 32 <br>Occupation: Financial Analyst <br>Interests: Puzzles, board games, running About: Maria is a competitive individual who loves a good challenge. She frequently plays chess with friends and colleagues, aiming to outperform her peers. Maria is motivated by the leaderboard and is determined to see her name among the top 10 players. She appreciates the detailed rules section to refine her gameplay and stay ahead of her competitors.
 
 Persona 3: The Casual Player<br>Name: John Smith <br>Age: 45 <br>Occupation: Teacher <br>Interests: Reading, gardening, family time About: John enjoys playing chess as a relaxing pastime. He often plays with friends and family members, appreciating the opportunity to bond over a classic game. While John isn't as focused on the competitive aspect, he still likes to see his name on the leaderboard from time to time. He occasionally checks the rules section to clarify any uncertainties and teach the game to his students.
-
+</details>
 
 ## Project Plan
 This project was planned .
@@ -114,13 +115,30 @@ Some .
 [Back to top](#top)
 
 ## Website Features
-### Homepage
+### Overall
+#### Navbar
+Shows the site title and links to "Home", "Leaderboard" and "Rules".<br>
+<img src="images-readme/navbar.png" alt="Navbar">
+
+#### Footer
+Shows links for the GitHub accounts of the group members.<br>
+<img src="images-readme/footer.png" alt="footer">
+
+### Specific Features
+#### Home
+In the Home page, the user can see the chessboard ready to play.<br>
+  <img src="images-readme/chessboard.png" alt="chess board">
+
+#### Leaderboard
+Here, the user can see the best results achieved by different users using the site to play/practice chess.<br>
   <img src="">
 
-t
-
-### Footer
-  <img src="">
+#### Rules
+This page show how to play chess, the initial position of the pieces on the board, how every piece can move on the board and special moves/features.<br>
+  <img src="images-readme/chess-rules.png">
+  <img src="images-readme/pieces-moves.png">
+  <img src="images-readme/special-moves.png">
+</details>
 
 The footer.
 
