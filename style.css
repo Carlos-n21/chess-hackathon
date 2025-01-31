@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -46,9 +46,85 @@ body {
     transition: transform 0.25s ease-out;
 }
 
+/* navbar links hover effect */
 .navbar a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+/* rules container style */
+.rules-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px; /* Adjust for navbar height */
+    margin-bottom: 40px; /* Add space between the container and the footer */
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; /* Center all text */
+}
+
+.rules-container h1, .rules-container h2, .rules-container h3 {
+    margin: 10px 0;
+}
+
+.rules-container p {
+    margin: 10px 0;
+}
+
+.rules-container img {
+    margin: 10px 0;
+}
+
+.rules-image {
+    width: 100%;
+    max-width: 400px;
+}
+
+.rules-piece {
+    width: 200px;
+    height: 200px;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* leaderboard container style */
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px; /* Adjust for navbar height */
+    flex-grow: 1;
+}
+
+.leaderboard-table {
+    width: 90%; /* Make the table wider to fit 90% of the page width */
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Add space between the table and the footer */
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increase padding for better readability */
+    text-align: center;
+}
+
+.leaderboard-table th {
+    background-color: #333;
+    color: white;
+}
+
+.leaderboard-table td:nth-child(2) {
+    text-align: left; /* Align text in the names column to the left */
 }
 
 /* board style */
@@ -57,13 +133,18 @@ body {
     grid-template-columns: repeat(8, 80px);
     grid-template-rows: repeat(8, 80px);
     gap: 0;
-    margin: 50px auto 10px auto; /* Center the chessboard and add space */
+    margin-top: 20px; /* Adjust for space between navbar and chessboard */
+    margin-bottom: 40px; /* Adjust for footer height */
 }
 
 /* squares style */
 .square {
     width: 80px;
     height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px; /* Adjust the size of the pieces */
 }
 
 /* squares colors */
@@ -86,7 +167,6 @@ body {
     color: white;
     position: relative;
     bottom: 0;
-    margin-top: 40px; /* Adjust for half square height */
     box-sizing: border-box;
 }
 
@@ -97,6 +177,7 @@ body {
     margin-left: 20px;
 }
 
+/* footer github icons style */
 .footer img {
     width: 24px; 
     height: 24px;
