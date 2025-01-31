@@ -1,5 +1,5 @@
 # Chess Game  <a id="top"/>
-<img src=""><br>
+<!--  <img src=""><br> -->
 
 
 
@@ -53,11 +53,12 @@ The project goal.
 The site user.
 
 ### Users
-Persona 1: The .
+Persona 1: The Enthusiastic Novice<br>
+Name: James Parker Age: 25 <br>Occupation: Software Developer <br>Interests: Video games, coding, strategy games <br>About: James has recently discovered his passion for chess and is eager to improve his skills. He enjoys playing chess with colleagues during lunch breaks and loves seeing his progress on the leaderboard. James often refers to the chess rules section to better understand advanced strategies and tactics. His goal is to eventually make it to the top 10 players on the site.
 
-Persona 2: The .
+Persona 2: The Competitive Challenger<br>Name: Maria Gonzalez <br>Age: 32 <br>Occupation: Financial Analyst <br>Interests: Puzzles, board games, running About: Maria is a competitive individual who loves a good challenge. She frequently plays chess with friends and colleagues, aiming to outperform her peers. Maria is motivated by the leaderboard and is determined to see her name among the top 10 players. She appreciates the detailed rules section to refine her gameplay and stay ahead of her competitors.
 
-Persona 3: The .
+Persona 3: The Casual Player<br>Name: John Smith <br>Age: 45 <br>Occupation: Teacher <br>Interests: Reading, gardening, family time About: John enjoys playing chess as a relaxing pastime. He often plays with friends and family members, appreciating the opportunity to bond over a classic game. While John isn't as focused on the competitive aspect, he still likes to see his name on the leaderboard from time to time. He occasionally checks the rules section to clarify any uncertainties and teach the game to his students.
 
 
 ## Project Plan
