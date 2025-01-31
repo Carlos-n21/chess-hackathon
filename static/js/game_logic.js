@@ -84,7 +84,10 @@ const drop = (ev) => {
 }
 
 const getPossibleMoves = (startingSquareId,piece) => {
-    
+    const pieceColor = piece.getAttribute('color');
+    if(piece.classList.contains('pawn')){
+        getPawnMoves(startingSquareId,pieceColor)
+    }
 }
 
 const isSquareOccupied = (square) => {
@@ -94,5 +97,46 @@ const isSquareOccupied = (square) => {
         return color;
     } else {
         return "blank";
+    }
+}
+
+const getPawnMoves = (startingSquareId,pieceColor) => {
+    checkPawnDiagonalCaptures(startingSquareId,pieceColor);
+    checkPawnForwardMoves(startingSquareId,pieceColor);
+}
+
+const checkPawnDiagonalCaptures = (startingSquareId,pieceColor) => {
+    const file = startingSquareId.charAt(0);
+    const rank = startingSquareId.charAt(1);
+    const rankNumber = parseInt(rank);
+    let currentFile = file;
+    let currentRank = rankNumber;
+    let currentSquareId = currentFile + currentRank;
+    let currentSquare = document.getElementById(currentSquareId);
+    let squareContent = isSquareOccupied(currentSquare);
+    //set direction for possible pawn moves
+    let direction;
+    if(pieceColor=='white'){
+        direction = 1
+    } else {
+        direction = -1
+    }
+    //set new rank after move according to pieceColor
+    currentRank += direction;
+    //for left and right
+    for (let i=-1;i<=1;i+=2){
+        //sets new file after move
+        currentFile=String.fromCharCode(file.charCodeAt(0)+i);
+        //if the move is within the board
+        if (currentFile >= 'a' && currentFile <= 'h'){
+            //gets the new square after move
+            currentSquareId = currentFile+currentRank;
+            currentSquare = document.getElementById(currentSquareId);
+            //checks if there is a piece of the other color, if yes, append the square id to the legalSquares array
+            squareContent = isSquareOccupied(currentSquare);
+            if(squareContent != 'blank' && squareContent !='pieceColor') {
+                legalSquares.push(currentSquareId);
+            }
+        }
     }
 }
