@@ -5,7 +5,8 @@
 
 ## Introduction
 
-The .
+This website was created as part of the WECA group Hackathon, to finalize the Full Stack Web Development with AI.<br>
+Initial idea came from one of the members that wnated to do this project, but with more features that sounded too much for this project, as it was only 4 working days long, <br>and the group felt it was better to achieve a working MVP with basic features that our colleague can use in the future as a base for own project and get more advanced features or redo it.
 
 Live site: []()
 
@@ -44,7 +45,7 @@ Live site: []()
 [Back to top](#top)
 
 ## User Experience Design
-For.<br>
+For our.<br>
 Focu.
 
 ### Project Brief
@@ -224,12 +225,18 @@ When
 Overa
 
 ### Media References
-
+[Chess Board Tutorial](https://www.youtube.com/watch?v=5i9HNfKvrLU&list=PLHwEiwAgAA2RVJ_YyEYsJQLlvRORoeSc5)<br>
+[Instructables](https://www.instructables.com/Playing-Chess/)
 
 ### Acknowledgements
 Ever
 
 ### Owner Details
-This 
+This project was done by the following 5 students of the WECA group, that finished the FulL Stack Development with AI - Copilot Bootcamp in February 2025:<br>
+[Alex](https://github.com/A-SousaRodrigues)<br>
+[Carlos](https://github.com/Carlos-n21)<br>
+[Geza](https://github.com/BristolGeza)<br>
+[Kelvin](https://github.com/KelvinC181)<br>
+[Tom](https://github.com/TomFearn)<br>
 
 [Back to top](#top)
