@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 # Create your views here.
 
-def chess(request):
-    return render(request, 'game/chess.html')
+class ChessView(TemplateView):
+    template_name = "game/chess.html"
+    paginate_by = 6
+

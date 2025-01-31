@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Game</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-left">
-            Chess Game
-        </div>
-        <div class="navbar-right">
-            <a href="index.html">Start</a>
-            <a href="leaderboard.html">Leaderboard</a>
-            <a href="rules.html">Rules</a>
-        </div>
-    </nav>
+{% extends "base.html" %}
+
+{% block content %}
 
     <!-- chess board -->
     <div class="chessBoard">
@@ -97,11 +80,4 @@
         <div class="square black">&#9814;</div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <a href="https://github.com/" target="_blank">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 24px; height: 24px; border-radius: 50%;">
-        </a>
-    </footer>
-</body>
-</html>
+    {% endblock %}

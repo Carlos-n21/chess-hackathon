@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import ChessView
 
 urlpatterns = [
-    path('', views.chess, name='home'),
+    path("", ChessView.as_view, name='home'),
 ]
