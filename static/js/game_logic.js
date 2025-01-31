@@ -1,4 +1,5 @@
-let legalSquares=[];
+let legalSquares = [];
+let isWhiteTurn = true;
 const boardSquares = document.querySelectorAll('.square');
 const pieces = document.querySelectorAll('.piece');
 const piecesImages = document.querySelectorAll('img');
@@ -23,7 +24,7 @@ const setupPieces = () => {
         pieces[i].addEventListener('dragstart',drag);
         pieces[i].setAttribute('draggable',true);
         //sets the piece id to piece+square id
-        pieces[i].id=pieces[i].className.split(' ')[1]+pieces[i].parentElement.id;
+        pieces[i].id=pieces[i].className.split(' ')[1]+pieces[i].parentNode.id;
     }
     //prevents the pieces images from being dragged
     for(let i=0;i<piecesImages.length;i++){
@@ -39,7 +40,13 @@ const allowDrop = (ev) => {
 //sets drag data of piece
 const drag = (ev) => {
     const piece = ev.target;
-    ev.dataTransfer.setData('text',piece.id)
+    const pieceColor = piece.getAttribute('color');
+    //implements a turn system
+    if((isWhiteTurn && pieceColor == 'white')||(!isWhiteTurn && pieceColor == 'black')){
+        ev.dataTransfer.setData('text',piece.id);
+        const startingSquareId = piece.parentNode.id;
+        getPossibleMoves(startingSquareId,piece);
+    }
 }
 
 const drop = (ev) => {
@@ -50,5 +57,42 @@ const drop = (ev) => {
     const piece=document.getElementById(data);
     const destinationSquare=ev.currentTarget;
     let destinationSquareId=destinationSquare.id;
-    destinationSquare.appendChild(piece);
+
+    //if square is blank, and the destination square is a legal square, append piece div to square
+    if((isSquareOccupied(destinationSquare) == 'blank') && (legalSquares.includes(destinationSquareId))) {
+        destinationSquare.appendChild(piece);
+        //swaps turn
+        isWhiteTurn=!isWhiteTurn;
+        //resets legalSquares array 
+        legalSquares.length=0;
+        return;
+    }
+    //if square is occupied, and the destination square is a legal square, the new piece takes the old piece
+    else if((isSquareOccupied(destinationSquare) != 'blank') && (legalSquares.includes(destinationSquareId))) {
+        //removes the first child element
+        while (destinationSquare.firstChild) {
+            destinationSquare.removeChild(destinationSquare.firstChild);
+        }
+        //appends the dragged piece
+        destinationSquare.appendChild(piece);
+        //swaps turn
+        isWhiteTurn=!isWhiteTurn;
+        //resets legalSquares array 
+        legalSquares.length=0;
+        return;
+    }
+}
+
+const getPossibleMoves = (startingSquareId,piece) => {
+    
+}
+
+const isSquareOccupied = (square) => {
+    //checks if square has piece 
+    if(square.querySelector('.piece')) {
+        const color = square.querySelector(".piece").getAttribute('color');
+        return color;
+    } else {
+        return "blank";
+    }
 }
