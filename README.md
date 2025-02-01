@@ -45,13 +45,14 @@ Live site: []()
 [Back to top](#top)
 
 ## User Experience Design
-For our.<br>
-Focu.
+This project shows a simple design, with intuitive menus to the game, leaderboard and rules.<br>
+The site is responsive to different screen sizes, although on smaller screens the user might need to navitgate through the pages.<br>
+We aim to create a seamless experience for the user.<br>
 
 ### Project Brief
-The project goal.
-
-The site user.
+The project goal was to create a simple website, where users can play chess and have access, if possible to a leaderboard and the rules to play chess in different areas.<br>
+Also to make the game available to be played in different devices.
+Though in smaller devices the user mihgt need to navigate through the board.<br>
 
 ### Users
 <details>
@@ -64,7 +65,9 @@ Persona 3: The Casual Player<br>Name: John Smith <br>Age: 45 <br>Occupation: Tea
 </details>
 
 ## Project Plan
-This project was planned .
+This project was planned in the first 2 days with 2 ideas being shared, and the chess game getting more attention and being chosen for this project.<br>
+During the first day, we had 2 meetings, having a brainstorming session on the second meeting and making a mirro board with different features that we thought would be good for the project as well as a "progress map" to be a guide.<br>
+We also checked different skills and areas where everyone looked better to work.<br>
 
 ### User Stories
 Here are all the user stories that have been prioritised (all must have and some should have ones) for the current implementation of the site:
