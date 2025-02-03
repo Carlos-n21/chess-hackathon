@@ -96,6 +96,10 @@ const getPossibleMoves = (startingSquareId, piece) => {
   const pieceColor = piece.getAttribute("color");
   if (piece.classList.contains("pawn")) {
     getPawnMoves(startingSquareId, pieceColor);
+  } else if (piece.classList.contains("knight")) {
+    getKnightMoves(startingSquareId, pieceColor);
+  } else if (piece.classList.contains("rook")) {
+    getRookMoves(startingSquareId, pieceColor);
   }
 };
 
@@ -108,6 +112,9 @@ const isSquareOccupied = (square) => {
     return "blank";
   }
 };
+
+
+/** pawn **/
 
 const getPawnMoves = (startingSquareId, pieceColor) => {
   checkPawnDiagonalCaptures(startingSquareId, pieceColor);
@@ -196,4 +203,43 @@ const checkPawnForwardMoves = (startingSquareId, pieceColor) => {
       }
     }
   }
+}
+
+/** knight **/
+
+const getKnightMoves = (startingSquareId, pieceColor) => {
+  //gets the file char code and converts it to 0 bases
+  const file = startingSquareId.charCodeAt(0)-97;
+  const rank = startingSquareId.charAt(1);
+  const rankNumber = parseInt(rank);
+  let currentFile = file;
+  let currentRank = rankNumber;
+
+  //creates an array of possible knight moves
+  const moves = [
+    [-2,1], [-1,2], [1,2], [2,1], [2,-1], [1,-2], [-1,-2], [-2,-1]
+  ]
+  moves.forEach((move)=> {
+    currentFile=file+move[0]
+    currentRank=rankNumber+move[1]
+    if (currentFile >= 0 && currentFile <= 7 && currentRank > 0 && currentRank <= 8) {
+      let currentSquareId = String.fromCharCode(currentFile+97)+currentRank;
+      let currentSquare = document.getElementById(currentSquareId);
+      let squareContent = isSquareOccupied(currentSquare);
+      if(squareContent != "blank" && squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+      }
+    }
+  }
+  )
+};
+
+/** rook **/
+const getRookMoves = (startingSquareId, pieceColor) => {
+  moveToEighthRank(startingSquareId, pieceColor);
+  moveToFirstRank(startingSquareId, pieceColor);
+  moveToAFile(startingSquareId, pieceColor);
+  moveToHFile(startingSquareId, pieceColor);
 }
