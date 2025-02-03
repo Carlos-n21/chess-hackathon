@@ -244,10 +244,15 @@
             <option value="draw">Draw</option>
         </select>
 
-        <label for="opponent_name">Opponent's Name (for Draw):</label>
-        <input type="text" id="opponent_name" name="opponent_name">
+        <!-- Opponent Name Input Field - initially hidden -->
+        <div id="opponent_name_field" style="display: none;">
+            <label for="opponent_name">Opponent's Name (for Draw):</label>
+            <input type="text" id="opponent_name" name="opponent_name">
+        </div>
         
         <button type="submit">Submit</button>
     </form>
 </div>
+
+<script src="{% static 'js/draw.js' %}"></script>
 {% endblock %}
