@@ -119,9 +119,9 @@ This page show how to play chess, the initial position of the pieces on the boar
 
 ## Responsive Design
 Responsive design was achieved with a mix of CSS code and Bootstratp classes throughout the website.<br>
-
+<!-->
   <img src="">
-
+-->
 ## Technologies Used
 ### Languages and Technologies
 ![Static Badge](https://img.shields.io/badge/HTML5-Language-blue)
@@ -150,7 +150,55 @@ Responsive design was achieved with a mix of CSS code and Bootstratp classes thr
 
 ## Deployment
 
-H
+Heroku deployment process:
+
+This project uses Heroku, a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+Deployment steps are as follows, after account setup:
+
+Select New in the top-right corner of your Heroku Dashboard, and select Create new app from the dropdown menu.
+Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select Create App.
+<details>
+From the new app Settings, click Reveal Config Vars, and set your environment variables.
+| Key | Value |
+| --- | --- |
+| AWS_ACCESS_KEY_ID | user's own value |
+| AWS_SECRET_ACCESS_KEY | user's own value |
+| DATABASE_URL | user's own value |
+| DISABLE_COLLECTSTATIC | 1 (this is temporary, and can be removed for the final deployment) |
+| EMAIL_HOST_PASS | user's own value |
+| EMAIL_HOST_USER | user's own value |
+| SECRET_KEY | user's own value |
+| STRIPE_PUBLIC_KEY | user's own value |
+| STRIPE_SECRET_KEY | user's own value |
+| STRIPE_WH_SECRET | user's own value |
+| USE_AWS | True |
+Heroku needs three additional files in order to deploy properly.
+requirements.txt
+Procfile
+runtime.txt
+You can install this project's requirements (where applicable) using:
+pip3 install -r requirements.txt
+If you have your own packages that have been installed, then the requirements file needs updated using:
+pip3 freeze --local > requirements.txt
+The Procfile can be created with the following command:
+echo web: gunicorn app_name.wsgi > Procfile
+replace app_name with the name of your primary Django app name; the folder where settings.py is located
+The runtime.txt file needs to know which Python version you're using:
+type: python3 --version in the terminal.
+in the runtime.txt file, add your Python version:
+python-3.9.19
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+Either:
+Select Automatic Deployment from the Heroku app.
+Or:
+In the Terminal/CLI, connect to Heroku using this command: heroku login -i
+Set the remote for Heroku: heroku git:remote -a app_name (replace app_name with your app name)
+After performing the standard Git add, commit, and push to GitHub, you can now type:
+git push heroku main
+The project should now be connected and deployed to Heroku!
+</details>
+Once the MVP was achieved and tested on Gitpod, the deployment was done on Heroku.
+
 
 [Back to top](#top)
 
@@ -166,14 +214,14 @@ Used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_
   <img src="images-readme/css-validation.png">
 
 
-### Bugs to fix
+<!--### Bugs to fix
 - Co
 
 
 [Back to top](#top)
 
 ## Credits
-<!--### Code References
+### Code References
 Webs
 <br>
 -->
@@ -185,18 +233,18 @@ Initially used to help with coding different pages, and after using CSS, was ask
 #### Debugging
 For debugging, Copilot was used to check the code when something not working well with the site and try to get a solution, that sometimes, needed to be polished.
 
-#### Code Optimisation
+<!-- #### Code Optimisation
 When 
 
 #### Impact on Workflow
-Overa
+Overa-->
 
 ### Media References
 [Chess Board Tutorial](https://www.youtube.com/watch?v=5i9HNfKvrLU&list=PLHwEiwAgAA2RVJ_YyEYsJQLlvRORoeSc5)<br>
 [Instructables](https://www.instructables.com/Playing-Chess/)
 
-### Acknowledgements
-Ever
+<!--### Acknowledgements
+Ever-->
 
 ### Owner Details
 This project was done by the following 5 students of the WECA group, that finished the FulL Stack Development with AI - Copilot Bootcamp in February 2025:<br>
