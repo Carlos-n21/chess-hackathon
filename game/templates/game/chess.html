@@ -231,11 +231,22 @@
 </div>
 
 <div class="container mt-5">
-    <h1>Submit Winner's Name</h1>
+    <h1>Submit Winner's Name and Result</h1>
     <form method="POST">
         {% csrf_token %}
+        
         <label for="winner_name">Winner's Name:</label>
         <input type="text" id="winner_name" name="winner_name" required>
+        
+        <label for="game_result">Game Result:</label>
+        <select id="game_result" name="game_result" required>
+            <option value="win">Win</option>
+            <option value="draw">Draw</option>
+        </select>
+
+        <label for="opponent_name">Opponent's Name (for Draw):</label>
+        <input type="text" id="opponent_name" name="opponent_name">
+        
         <button type="submit">Submit</button>
     </form>
 </div>

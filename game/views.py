@@ -9,10 +9,19 @@ class ChessView(TemplateView):
     template_name = "game/chess.html"
 
     def post(self, request):
-        """Handles the form submission when a winner is submitting their name."""
+        """Handles the form submission when a winner is submitting their name and result."""
         winner_name = request.POST.get("winner_name")
+        game_result = request.POST.get("game_result")  # Win or Draw
+
         if winner_name:
-            self.update_scoreboard(winner_name)  # Update scoreboard
+            if game_result == "win":
+                self.update_scoreboard(winner_name, points=1.0)  # Win = 1 point
+            elif game_result == "draw":
+                self.update_scoreboard(winner_name, points=0.5)  # Draw = 0.5 points
+                # Optionally, add 0.5 points to the opponent as well
+                opponent_name = request.POST.get("opponent_name")
+                if opponent_name:
+                    self.update_scoreboard(opponent_name, points=0.5)
         return redirect("score")  # Redirect to the leaderboard page
 
     def update_scoreboard(self, winner_name, points=1.0):
