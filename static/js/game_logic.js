@@ -100,6 +100,8 @@ const getPossibleMoves = (startingSquareId, piece) => {
     getKnightMoves(startingSquareId, pieceColor);
   } else if (piece.classList.contains("rook")) {
     getRookMoves(startingSquareId, pieceColor);
+  } else if (piece.classList.contains("bishop")) {
+    getBishopMoves(startingSquareId, pieceColor);
   }
 };
 
@@ -257,10 +259,15 @@ const moveToEighthRank = (startingSquareId, pieceColor) => {
     let currentSquareId = file+currentRank;
     let currentSquare = document.getElementById(currentSquareId);
     let squareContent = isSquareOccupied(currentSquare)
-    if (squareContent != "blank" && squareContent == pieceColor) {
-      return;
+    if (squareContent != "blank") {
+      if (squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+        return;
+      }
     } else {
-      legalSquares.push(currentSquareId)
+      legalSquares.push(currentSquareId);
     }
   }
 }
@@ -276,10 +283,15 @@ const moveToFirstRank = (startingSquareId, pieceColor) => {
     let currentSquareId = file+currentRank;
     let currentSquare = document.getElementById(currentSquareId);
     let squareContent = isSquareOccupied(currentSquare)
-    if (squareContent != "blank" && squareContent == pieceColor) {
-      return;
+    if (squareContent != "blank") {
+      if (squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+        return;
+      }
     } else {
-      legalSquares.push(currentSquareId)
+      legalSquares.push(currentSquareId);
     }
   }
 }
@@ -294,10 +306,15 @@ const moveToAFile = (startingSquareId, pieceColor) => {
     let currentSquareId = currentFile+rank;
     let currentSquare = document.getElementById(currentSquareId);
     let squareContent = isSquareOccupied(currentSquare)
-    if (squareContent != "blank" && squareContent == pieceColor) {
-      return;
+    if (squareContent != "blank") {
+      if (squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+        return;
+      }
     } else {
-      legalSquares.push(currentSquareId)
+      legalSquares.push(currentSquareId);
     }
   }
 }
@@ -312,10 +329,50 @@ const moveToHFile = (startingSquareId, pieceColor) => {
     let currentSquareId = currentFile+rank;
     let currentSquare = document.getElementById(currentSquareId);
     let squareContent = isSquareOccupied(currentSquare)
-    if (squareContent != "blank" && squareContent == pieceColor) {
-      return;
+    if (squareContent != "blank") {
+      if (squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+        return;
+      }
     } else {
-      legalSquares.push(currentSquareId)
+      legalSquares.push(currentSquareId);
+    }
+  }
+}
+
+
+/** Bishop **/
+const getBishopMoves = (startingSquareId, pieceColor) => {
+  moveToEighthRankAFile(startingSquareId, pieceColor);
+  moveToEighthRankHFile(startingSquareId, pieceColor);
+  moveToFirstRankAFile(startingSquareId, pieceColor);
+  moveToFirstRankHFile(startingSquareId, pieceColor);
+}
+
+const moveToEighthRankAFile = (startingSquareId, pieceColor) => {
+  const file = startingSquareId.charAt(0);
+  const rank = startingSquareId.charAt(1);
+  const rankNumber = parseInt(rank);
+  let currentFile = file;
+  let currentRank = rankNumber;
+  //untill the bishop hit a file or 8th rank
+  while(!(currentFile=="a" || currentRank == 8)) {
+    currentFile=String.fromCharCode(currentFile.charCodeAt(0)-1);
+    currentRank++;
+    let currentSquareId = currentFile+currentRank;
+    let currentSquare = document.getElementById(currentSquareId);
+    let squareContent = isSquareOccupied(currentSquare)
+    if (squareContent != "blank") {
+      if (squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+        return;
+      }
+    } else {
+      legalSquares.push(currentSquareId);
     }
   }
 }
