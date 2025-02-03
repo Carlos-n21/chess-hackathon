@@ -145,7 +145,7 @@ const checkPawnDiagonalCaptures = (startingSquareId, pieceColor) => {
       currentSquare = document.getElementById(currentSquareId);
       //checks if there is a piece of the other color, if yes, append the square id to the legalSquares array
       squareContent = isSquareOccupied(currentSquare);
-      if (squareContent != "blank" && squareContent != "pieceColor") {
+      if (squareContent != "blank" && squareContent != pieceColor) {
         legalSquares.push(currentSquareId);
       }
     }
@@ -172,4 +172,28 @@ const checkPawnForwardMoves = (startingSquareId, pieceColor) => {
 
   //set new rank after move according to pieceColor
   currentRank += direction;
-};
+  currentSquareId = currentFile + currentRank;
+  currentSquare = document.getElementById(currentSquareId);
+  //checks if there is a piece, if not, append the square id to the legalSquares array
+  squareContent = isSquareOccupied(currentSquare);
+  if (squareContent != "blank") {
+    return;
+  } else {
+    legalSquares.push(currentSquareId);
+    //checks if the rank is 2 or 7
+    if (rankNumber != 2 && rankNumber !=7) {
+      return;
+    } else {
+      currentRank += direction;
+      currentSquareId = currentFile + currentRank;
+      currentSquare = document.getElementById(currentSquareId);
+      //checks if there is a piece, if not, append the square id to the legalSquares array
+      squareContent = isSquareOccupied(currentSquare);
+      if (squareContent != "blank") {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+      }
+    }
+  }
+}
