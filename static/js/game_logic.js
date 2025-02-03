@@ -273,10 +273,13 @@ const moveToEighthRank = (startingSquareId, pieceColor) => {
     let currentSquareId = file + currentRank;
     let currentSquare = document.getElementById(currentSquareId);
     let squareContent = isSquareOccupied(currentSquare);
+    //if square is blank continue loop
     if (squareContent != "blank") {
+      //if square is occupied with piece of same color, exit loop
       if (squareContent == pieceColor) {
         return;
       } else {
+        //if square is occupied with different color, add to legal move and exit loop
         legalSquares.push(currentSquareId);
         return;
       }
@@ -490,7 +493,7 @@ const getKingMoves = (startingSquareId, pieceColor) => {
   let currentFile = file;
   let currentRank = rankNumber;
 
-  //creates an array of possible knight moves
+  //creates an array of possible king moves
   const moves = [
     [0, 1],
     [1, 1],
