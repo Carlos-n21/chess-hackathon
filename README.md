@@ -1,14 +1,12 @@
 # Chess Game  <a id="top"/>
 <!--  <img src=""><br> -->
 
-
-
 ## Introduction
 
 This website was created as part of the WECA group Hackathon, to finalize the Full Stack Web Development with AI.<br>
 Initial idea came from one of the members that wnated to do this project, but with more features that sounded too much for this project, as it was only 4 working days long, <br>and the group felt it was better to achieve a working MVP with basic features that our colleague can use in the future as a base for own project and get more advanced features or redo it.
 
-Live site: []()
+<!-- Live site: []() -->
 
 ## Table of Contents
 - [User Experience Design](#user-experience-design)
@@ -17,13 +15,13 @@ Live site: []()
 - [Project Plan](#project-plan)
 - [User Stories](#user-stories)
 - [Wireframes](#wireframes)
-- [Design](#design)
+<!--- [Design](#design)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
     - [Imagery](#imagery)
 - [Website Features](#website-features)
     - [Overall](#overall)
-    - [Specific](#specific-features)
+    - [Specific](#specific-features)-->
 - [Responsive Design](#responsive-design)
 - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
@@ -31,12 +29,7 @@ Live site: []()
 - [Testing](#testing)
     - [HTML Validation](#html-validation)
     - [CSS Validation](#css-validation)
-    - [Lighthouse Audit](#lighthouse-audit)
-    - [Tests Results Summary](#test-results-summary)
-    - [ERD](#erd)
-    - [Bugs to fix](#bugs-to-fix)
 - [Credits](#credits)
-    - [Code References](#code-references)
     - [Use of AI](#use-of-ai)
     - [Media References](#media-references)
     - [Acknowledgements](#acknowledgements)
@@ -66,15 +59,19 @@ Persona 3: The Casual Player<br>Name: John Smith <br>Age: 45 <br>Occupation: Tea
 
 ## Project Plan
 This project was planned in the first 2 days with 2 ideas being shared, and the chess game getting more attention and being chosen for this project.<br>
-During the first day, we had 2 meetings, having a brainstorming session on the second meeting and making a mirro board with different features that we thought would be good for the project as well as a "progress map" to be a guide.<br>
+During the first day, we had 2 meetings, having a brainstorming session on the second meeting and making a miro board with different features that we thought would be good for the project as well as a "progress map" to be a guide.<br>
 We also checked different skills and areas where everyone looked better to work.<br>
+
+<img src="images-readme/miro.png">
 
 ### User Stories
 Here are all the user stories that have been prioritised (all must have and some should have ones) for the current implementation of the site:
 | User Stories                                    | MoSCoW priority           |  Status      |
 | ----------------------------------------------- |:-------------------------:| ------------:|
-| Homepage                                        | must have                 |  Done        |
-
+| Navigation System                               | must have                 |  Done        |
+| Chess Game Interface                            | must have                 |  Done        |
+| Responsive Design                               | must have                 |  Done        |
+| Chess Rules Display                             | must have                 |  Done        |
 
 
 
@@ -85,35 +82,11 @@ All user stories were logged on the [GitHub Project Board](https://github.com/us
 ### Wireframes
 Layout of website:
 
-- Mobile view:<br>
-  <img src="">
-  <img src="">
-  <img src="">
-   
 - Tablet view:<br>
-  <img src=""> 
-
-s.
-
-[Back to top](#top)
-
-## Design
-### Colour Scheme
-- Coulour Palette
-  <img src="">
-
-- Contrast check <br>
-  <img src=""> 
-  <img src="">
-
-### Typography
-Initial 
-
-
-### Imagery
-Some .
-
-
+  <img src="images-readme/wireframe-tablet.png">
+   
+- Desktop view:<br>
+  <img src="images-readme/wireframe-desktop.png"> 
 
 [Back to top](#top)
 
@@ -134,27 +107,20 @@ In the Home page, the user can see the chessboard ready to play.<br>
 
 #### Leaderboard
 Here, the user can see the best results achieved by different users using the site to play/practice chess.<br>
-  <img src="">
 
 #### Rules
 This page show how to play chess, the initial position of the pieces on the board, how every piece can move on the board and special moves/features.<br>
   <img src="images-readme/chess-rules.png">
   <img src="images-readme/pieces-moves.png">
   <img src="images-readme/special-moves.png">
-</details>
-
-The footer.
 
 
 [Back to top](#top)
 
 ## Responsive Design
-Almost .<br>
+Responsive design was achieved with a mix of CSS code and Bootstratp classes throughout the website.<br>
 
   <img src="">
-
-## Future Features
-- A
 
 ## Technologies Used
 ### Languages and Technologies
@@ -193,32 +159,11 @@ Validation of HTML/CSS, Lighthouse Audits, Bugs
 
 ### HTML Validation
 Used [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) to test the HTML on all webpages and updated as needed. No errors found after fixing.
-<details>
-  <img src="">
-
-</details>
-
 
 ### CSS Validation
 
 Used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) to test CSS style and no errors found.
-
-  <img src="">
-
-
-### Lighthouse Audit
-
-Used Chrome Dev Tools Lighthouse to audit the site for response time and accessibility.<br>
-<details>
-  <img src="">
-
-</details>
-
-
-
-### ERD
-
-  <img src="">
+  <img src="images-readme/css-validation.png">
 
 
 ### Bugs to fix
@@ -228,16 +173,17 @@ Used Chrome Dev Tools Lighthouse to audit the site for response time and accessi
 [Back to top](#top)
 
 ## Credits
-### Code References
+<!--### Code References
 Webs
 <br>
-
+-->
 ## Use of AI
 #### Code Generation
-The .
+Copilot was used to help write HTML and CSS code, also to use Bootstrap classes to improve code effiency in the pages.
+Initially used to help with coding different pages, and after using CSS, was asked what changes could be made using Bootstrap.
 
 #### Debugging
-Regu 
+For debugging, Copilot was used to check the code when something not working well with the site and try to get a solution, that sometimes, needed to be polished.
 
 #### Code Optimisation
 When 
