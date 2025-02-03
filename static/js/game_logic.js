@@ -3,12 +3,31 @@ let isWhiteTurn = true;
 const boardSquares = document.querySelectorAll(".square");
 const pieces = document.querySelectorAll(".piece");
 const piecesImages = document.querySelectorAll("img");
+const winModal = document.getElementById("modal");
 
 document.addEventListener('DOMContentLoaded', function() {
   setupBoardSquares()
   setupPieces()
+
+  const closeButton = document.querySelector('.close-button');
+  //hide win modal on close button click
+    closeButton.addEventListener('click', function() {
+        winModal.classList.add('hidden');
+    });
   }
 )
+
+const onKingTaken = (kingColor) => {
+  winModal.classList.remove('hidden')
+  const winMessage = document.querySelector(".win-message")
+  if (kingColor=="white"){
+    winMessage.innerText = "White Wins"
+  } else if (kingColor == "black") {
+    winMessage.innerText = "Black Wins"
+  }
+}
+
+  
 
 //sets up squares' ids
 const setupBoardSquares = () => {
@@ -84,12 +103,18 @@ const drop = (ev) => {
     isSquareOccupied(destinationSquare) != "blank" &&
     legalSquares.includes(destinationSquareId)
   ) {
+    //checks if the piece is the king
+    if (destinationSquare.firstChild.classList.contains('king')) {
+      const kingColor = destinationSquare.firstChild.getAttribute('color');
+      onKingTaken(kingColor);
+    }
     //removes the first child element
     while (destinationSquare.firstChild) {
       destinationSquare.removeChild(destinationSquare.firstChild);
     }
     //appends the dragged piece
     destinationSquare.appendChild(piece);
+    
     //swaps turn
     isWhiteTurn = !isWhiteTurn;
     //resets legalSquares array
