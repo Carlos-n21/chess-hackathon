@@ -258,7 +258,7 @@ const moveToEighthRank = (startingSquareId, pieceColor) => {
     currentRank++;
     let currentSquareId = file+currentRank;
     let currentSquare = document.getElementById(currentSquareId);
-    let squareContent = isSquareOccupied(currentSquare)
+    let squareContent = isSquareOccupied(currentSquare);
     if (squareContent != "blank") {
       if (squareContent == pieceColor) {
         return;
@@ -282,7 +282,7 @@ const moveToFirstRank = (startingSquareId, pieceColor) => {
     currentRank--;
     let currentSquareId = file+currentRank;
     let currentSquare = document.getElementById(currentSquareId);
-    let squareContent = isSquareOccupied(currentSquare)
+    let squareContent = isSquareOccupied(currentSquare);
     if (squareContent != "blank") {
       if (squareContent == pieceColor) {
         return;
@@ -305,7 +305,7 @@ const moveToAFile = (startingSquareId, pieceColor) => {
     currentFile=String.fromCharCode(currentFile.charCodeAt(0)-1);
     let currentSquareId = currentFile+rank;
     let currentSquare = document.getElementById(currentSquareId);
-    let squareContent = isSquareOccupied(currentSquare)
+    let squareContent = isSquareOccupied(currentSquare);
     if (squareContent != "blank") {
       if (squareContent == pieceColor) {
         return;
@@ -328,7 +328,7 @@ const moveToHFile = (startingSquareId, pieceColor) => {
     currentFile=String.fromCharCode(currentFile.charCodeAt(0)+1);
     let currentSquareId = currentFile+rank;
     let currentSquare = document.getElementById(currentSquareId);
-    let squareContent = isSquareOccupied(currentSquare)
+    let squareContent = isSquareOccupied(currentSquare);
     if (squareContent != "blank") {
       if (squareContent == pieceColor) {
         return;
@@ -357,13 +357,91 @@ const moveToEighthRankAFile = (startingSquareId, pieceColor) => {
   const rankNumber = parseInt(rank);
   let currentFile = file;
   let currentRank = rankNumber;
-  //untill the bishop hit a file or 8th rank
+  //until the bishop hit a file or 8th rank
   while(!(currentFile=="a" || currentRank == 8)) {
     currentFile=String.fromCharCode(currentFile.charCodeAt(0)-1);
     currentRank++;
     let currentSquareId = currentFile+currentRank;
     let currentSquare = document.getElementById(currentSquareId);
-    let squareContent = isSquareOccupied(currentSquare)
+    let squareContent = isSquareOccupied(currentSquare);
+    if (squareContent != "blank") {
+      if (squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+        return;
+      }
+    } else {
+      legalSquares.push(currentSquareId);
+    }
+  }
+}
+
+const moveToEighthRankHFile = (startingSquareId, pieceColor) => {
+  const file = startingSquareId.charAt(0);
+  const rank = startingSquareId.charAt(1);
+  const rankNumber = parseInt(rank);
+  let currentFile = file;
+  let currentRank = rankNumber;
+  //until the bishop hit h file or 8th rank
+  while(!(currentFile=="h" || currentRank == 8)) {
+    currentFile=String.fromCharCode(currentFile.charCodeAt(0)+1);
+    currentRank++;
+    let currentSquareId = currentFile+currentRank;
+    let currentSquare = document.getElementById(currentSquareId);
+    let squareContent = isSquareOccupied(currentSquare);
+    if (squareContent != "blank") {
+      if (squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+        return;
+      }
+    } else {
+      legalSquares.push(currentSquareId);
+    }
+  }
+}
+
+const moveToFirstRankAFile = (startingSquareId, pieceColor) => {
+  const file = startingSquareId.charAt(0);
+  const rank = startingSquareId.charAt(1);
+  const rankNumber = parseInt(rank);
+  let currentFile = file;
+  let currentRank = rankNumber;
+  //until the bishop hit a file or 8th rank
+  while(!(currentFile=="a" || currentRank == 1)) {
+    currentFile=String.fromCharCode(currentFile.charCodeAt(0)-1);
+    currentRank--;
+    let currentSquareId = currentFile+currentRank;
+    let currentSquare = document.getElementById(currentSquareId);
+    let squareContent = isSquareOccupied(currentSquare);
+    if (squareContent != "blank") {
+      if (squareContent == pieceColor) {
+        return;
+      } else {
+        legalSquares.push(currentSquareId);
+        return;
+      }
+    } else {
+      legalSquares.push(currentSquareId);
+    }
+  }
+}
+
+const moveToFirstRankHFile = (startingSquareId, pieceColor) => {
+  const file = startingSquareId.charAt(0);
+  const rank = startingSquareId.charAt(1);
+  const rankNumber = parseInt(rank);
+  let currentFile = file;
+  let currentRank = rankNumber;
+  //until the bishop hit h file or 8th rank
+  while(!(currentFile=="h" || currentRank == 1)) {
+    currentFile=String.fromCharCode(currentFile.charCodeAt(0)+1);
+    currentRank--;
+    let currentSquareId = currentFile+currentRank;
+    let currentSquare = document.getElementById(currentSquareId);
+    let squareContent = isSquareOccupied(currentSquare);
     if (squareContent != "blank") {
       if (squareContent == pieceColor) {
         return;
