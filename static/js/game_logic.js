@@ -4,6 +4,12 @@ const boardSquares = document.querySelectorAll(".square");
 const pieces = document.querySelectorAll(".piece");
 const piecesImages = document.querySelectorAll("img");
 
+document.addEventListener('DOMContentLoaded', function() {
+  setupBoardSquares()
+  setupPieces()
+  }
+)
+
 //sets up squares' ids
 const setupBoardSquares = () => {
   for (let i = 0; i < boardSquares.length; i++) {
@@ -107,6 +113,8 @@ const getPossibleMoves = (startingSquareId, piece) => {
   } else if (piece.classList.contains("king")) {
     getKingMoves(startingSquareId, pieceColor);
   }
+
+  console.log(legalSquares)
 };
 
 const isSquareOccupied = (square) => {
